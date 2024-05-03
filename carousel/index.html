@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style>
+      .container {
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .card-body {
+        text-align: justify;
+        background-color: #0b8999;
+        color: #fff;
+        align-items: center;
+        padding: 3%;
+      }
+      .card-title {
+        color: #ffbb00;
+        margin-bottom: 0px;
+      }
+      .carousel-indicators {
+        bottom: -50px;
+      }
+      .carousel-indicators li {
+        border-radius: 45%;
+        background-color: #0b8999;
+      }
+      .carousel-indicators li.active {
+        background-color: #f08f0f;
+      }
+      .carousel-control-prev {
+        justify-content: flex-start;
+        left: -30px;
+      }
+      .carousel-control-next {
+        justify-content: flex-end;
+        right: -30px;
+      }
+      .carousel-control-icon {
+        width: 50px; /* Adjust the size of the icons as needed */
+        height: 50px;
+      }
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 5%; /* Adjust the width of the controls */
+      }
+
+      .carousel-inner {
+        width: 100%; /* Ensure carousel items take full width */
+      }
+
+      .carousel-item {
+        display: flex; /* Make carousel items flex containers */
+        align-items: center; /* Align items vertically */
+      }
+
+      .card {
+        margin: 0 auto; /* Center the cards */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3 style="text-align: center">SUGGESTED ACCOMMODATION</h3>
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <ol class="carousel-indicators">
+          <li
+            data-target="#carouselExampleIndicators"
+            data-slide-to="0"
+            class="active"
+          ></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="card d-flex flex-row" style="width: 100%">
+              <img
+                class="card-img-top"
+                src="ktmhouse.jpg"
+                alt="Card image cap"
+                style="width: 50%"
+              />
+              <div class="card-body" style="width: 50%">
+                <h5 class="card-title">Kantipur Temple House</h5>
+                <p>Thamel, Kathmandu</p>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card d-flex flex-row" style="width: 100%">
+              <img
+                class="card-img-top"
+                src="ktmhouse.jpg"
+                alt="Card image cap"
+                style="width: 50%"
+              />
+              <div class="card-body" style="width: 50%">
+                <h5 class="card-title">Kantipur Temple House</h5>
+                <p>Thamel, Kathmandu</p>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card d-flex flex-row" style="width: 100%">
+              <img
+                class="card-img-top"
+                src="ktmhouse.jpg"
+                alt="Card image cap"
+                style="width: 50%"
+              />
+              <div class="card-body" style="width: 50%">
+                <h5 class="card-title">Kantipur Temple House</h5>
+                <p>Thamel, Kathmandu</p>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="prev"
+        >
+          <!-- Left Caret Icon -->
+          <img
+            src="caret-left.png"
+            alt="Previous"
+            class="carousel-control-icon"
+          />
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="next"
+        >
+          <!-- Right Caret Icon -->
+          <img src="caret-right.png" alt="Next" class="carousel-control-icon" />
+        </a>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
