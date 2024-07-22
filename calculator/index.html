@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: #8aabab;
+            display: flex;
+            margin-top: 200px;
+        }
+        /* Style the calculator */
+        
+        .calculator {
+            width: 300px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: lightgray;
+            padding: 20px;
+            box-shadow: 2px 2px 2px 2px #888888;
+        }
+        
+        .calculator p {
+            margin-top: 0px;
+            margin-left: 0px;
+        }
+        
+        h1 {
+            color: white;
+        }
+        
+        h1,
+        p {
+            font-family: 'Roboto', sans-serif;
+            margin-left: 100px;
+        }
+        /* Style the buttons */
+        
+        .button {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .other {
+            display: inline-block;
+            width: 60px;
+            height: 50px;
+            background-color: gray;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .first {
+            background-color: crimson;
+        }
+        
+        .calculator .first:hover {
+            background-color: #ffcccb;
+        }
+        
+        .button:hover {
+            background-color: #ddd;
+        }
+        
+        .other:hover {
+            background-color: #ddd;
+        }
+        /* Style the display */
+        
+        .display {
+            height: 50px;
+            font-size: 20px;
+            text-align: right;
+            padding-right: 20px;
+            background-color: #696112;
+            box-shadow: 0px 0px 2px 2px #888888;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>CASIO</h1>
+        <p>Calculate your beyond expectations.</p>
+    </div>
+    <!-- Create the calculator -->
+    <div class="calculator">
+        <p>CASIO</p>
+        <!-- Create the display -->
+        <div class="display">0</div><br>
+        <!-- Create the buttons -->
+        <button class="button">1</button>
+        <button class="button">2</button>
+        <button class="button">3</button>
+        <button class="button">+</button>&nbsp &nbsp &nbsp
+        <button class="button other first">ON</button>
+        <br>
+        <button class="button">4</button>
+        <button class="button">5</button>
+        <button class="button">6</button>
+        <button class="button">-</button>&nbsp &nbsp &nbsp
+        <button class="button other">OFF</button>
+        <br>
+        <button class="button">7</button>
+        <button class="button">8</button>
+        <button class="button">9</button>
+        <button class="button">*</button>&nbsp &nbsp &nbsp
+        <button class="button other">CLR</button>
+        <br>
+        <button class="button">0</button>
+        <button class="button">.</button>
+        <button class="button">=</button>
+        <button class="button">/</button>&nbsp &nbsp &nbsp
+        <button class="button other">DEL</button>
+    </div>
+
+    <!-- Add the JavaScript to handle the calculator functionality -->
+    <script>
+        // Get all the buttons
+        const buttons = document.querySelectorAll('.button');
+        var active = "1";
+        // Add a click event to each button
+        buttons.forEach(button => button.addEventListener('click', calculate));
+
+        // The calculate function
+        function calculate(e) {
+            console.log(active);
+            // Get the display
+            const display = document.querySelector('.display');
+            console.log(display.textContent);
+
+            // Get the button value
+            const buttonVal = e.target.textContent;
+            console.log(buttonVal);
+            if (active === "1") {
+                // If the button is an equals sign, calculate the result
+                if (buttonVal === '=') {
+                    // Get the result
+                    const result = eval(display.textContent);
+
+                    // Update the display with the result
+                    display.textContent = result;
+                } else if (buttonVal === 'DEL') {
+                    const delResult = display.textContent.slice(0, -1);
+                    display.innerHTML = delResult;
+                } else if (buttonVal === 'CLR') {
+                    display.innerHTML = '';
+                } else if (buttonVal === 'OFF') {
+                    display.innerHTML = '';
+                    active = "0";
+                } else if (buttonVal === 'ON') {
+                    display.innerHTML = '0';
+                    active = "1";
+                } else {
+                    // Otherwise, append the button value to the display
+                    display.textContent += buttonVal;
+                }
+            } else {
+                if (buttonVal === 'ON') {
+                    display.innerHTML = '0';
+                    active = "1";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
